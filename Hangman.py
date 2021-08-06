@@ -142,8 +142,8 @@ class Hangman:
             
             if invalid_counter == 0:
                 print("You lost!")
-                game_val = input("Want to play again? Type Y to play again. Type N to exit. (Y/N): ")
-                if game_val  == "Y" or "y":
+                game_val = input("Want to play again? Type Y to play again. Type N to exit. (Y/N): ").lower()
+                if game_val  == "y":
                     self.start_menu()
                 else:
                     quit()
