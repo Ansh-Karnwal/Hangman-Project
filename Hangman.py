@@ -86,7 +86,6 @@ class Hangman:
         word_lst = []
         has_guessed = False
         invalid_counter = 6
-        print(random_word)
         print(self.hang_man_ui(invalid_counter))
         length_word = len(random_word)
         print(f"The length of the word is {length_word} letters long")
