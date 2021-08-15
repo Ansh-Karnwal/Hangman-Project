@@ -14,6 +14,9 @@ class Hangman:
         if start_game == 1:
             self.word_print_logic()
 
+    def direct_start(self):
+        self.word_print_logic()
+
     def read_data(self):
         with open("words.txt", "r") as words_file:
             words_strings = words_file.read().splitlines()
@@ -95,7 +98,7 @@ class Hangman:
             guess_letter = input("Enter the letter or word: ")
 
             while not guess_letter.isalpha():
-                print("Please enter a valid number!")
+                print("Please enter a valid letter or word!")
                 guess_letter = input("Enter the letter or word: ")
 
             if len(guess_letter) == 1 and guess_letter.isalpha():
@@ -142,8 +145,8 @@ class Hangman:
             if invalid_counter == 0:
                 print("You lost!")
                 game_val = input("Want to play again? Type Y to play again. Type N to exit. (Y/N): ").lower()
-                if game_val  == "y":
-                    self.start_menu()
+                if game_val == "y":
+                    self.direct_start()
                 else:
                     quit()
 
@@ -151,7 +154,7 @@ class Hangman:
                 print("You Won!")
                 game_val = input("Want to play again? Type Y to play again. Type N to exit. (Y/N): ").lower()
                 if game_val == "y":
-                    self.start_menu()
+                    self.direct_start()
                 else:
                     quit()
 
